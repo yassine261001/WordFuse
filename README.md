@@ -12,9 +12,7 @@ This project was built with help from the following resources:
 - [Django Official Documentation](https://docs.djangoproject.com/) — URL routing, ORM, authentication
 - [MDN Web Docs](https://developer.mozilla.org/) — JavaScript fetch() API and CSRF handling
 - [DictionaryAPI.dev](https://dictionaryapi.dev/) — free word validation API
-- [CSS inspiration](https://codecademy.com) — UI design reference (codecademy.com design)
 - Stack Overflow — various debugging and code snippets
-- AI assistance (Claude) — helped with debugging, code structure suggestions, and CSS styling
 
 ## Setup
 
