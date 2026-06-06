@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>WordFuse</title>
     {% load static %}
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'game/styles.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -51,7 +50,7 @@
                 <span id="lives-display">❤️❤️❤️</span>
                 <button class="ghost-btn-light" onclick="showLeaderboard()">Leaderboard</button>
                 <button class="ghost-btn-light" onclick="handleLogout()">Logout</button>
-                <button class="ghost-btn-light" onclick="openTutorial()">How to Play</button>
+                <button class="tutorial-btn" onclick="openTutorial()">How to Play</button>
             </div>
 
         </div>
