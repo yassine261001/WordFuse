@@ -4,10 +4,28 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --border: #e8e2d9;
+    --text: #2c2824;
+    --muted: #9a918a;
+    --topbar: #3d3530;
+    --btn-primary: #5c7a6b;
+    --btn-primary-hover: #4a6357;
+    --btn-tutorial: #c17b6f;
+    --btn-tutorial-hover: #a8665b;
+    --btn-ghost-hover: #f0ece6;
+    --danger: #c0392b;
+    --warning: #d68910;
+    --success: #5c7a6b;
+    --font: 'JetBrains Mono', monospace;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 /*  Auth  */
@@ -19,67 +37,84 @@ body {
 }
 
 #auth-card {
-    background: white;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 350px;
+    background: var(--surface);
+    padding: 36px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 360px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
 
 #logo {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: 700;
     text-align: center;
     margin-bottom: 4px;
-    color: #222;
+    color: var(--text);
+    letter-spacing: 2px;
 }
 
 #tagline {
     text-align: center;
-    color: #888;
-    font-size: 12px;
-    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
 }
 
 #auth-tabs {
     display: flex;
     gap: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .tab-btn {
     flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    background: white;
+    padding: 9px;
+    border: 1px solid var(--border);
+    background: var(--surface);
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 13px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: var(--font);
+    color: var(--muted);
+    transition: all 0.2s;
+    letter-spacing: 1px;
 }
 
 .tab-btn.active {
-    background: #333;
-    color: white;
-    border-color: #333;
+    background: var(--topbar);
+    color: #f5ede6;
+    border-color: var(--topbar);
+}
+
+.tab-btn:not(.active):hover {
+    background: var(--btn-ghost-hover);
+    color: var(--text);
 }
 
 .auth-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .auth-form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: var(--font);
     outline: none;
     width: 100%;
+    background: var(--bg);
+    color: var(--text);
+    transition: border-color 0.2s;
 }
 
 .auth-form input:focus {
-    border-color: #666;
+    border-color: var(--btn-primary);
+    background: white;
 }
 
 .auth-form .primary-btn {
@@ -87,58 +122,95 @@ body {
 }
 
 .auth-error {
-    color: red;
-    font-size: 12px;
+    color: var(--danger);
+    font-size: 11px;
     min-height: 16px;
 }
 
 /*  Buttons  */
 .primary-btn {
-    padding: 10px 20px;
-    background: #333;
+    padding: 11px 20px;
+    background: var(--btn-primary);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 13px;
+    font-family: var(--font);
+    letter-spacing: 1px;
+    transition: background 0.2s, transform 0.1s;
 }
 
 .primary-btn:hover {
-    background: #555;
+    background: var(--btn-primary-hover);
+    transform: translateY(-1px);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
 }
 
 .primary-btn:disabled {
-    background: #aaa;
+    background: #c8c2bc;
     cursor: not-allowed;
+    transform: none;
 }
 
 .ghost-btn {
     padding: 7px 14px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 13px;
-    color: #333;
+    font-size: 12px;
+    font-family: var(--font);
+    color: var(--muted);
+    transition: all 0.2s;
+    letter-spacing: 1px;
 }
 
 .ghost-btn:hover {
-    background: #f5f5f5;
+    background: var(--btn-ghost-hover);
+    color: var(--text);
+    border-color: #ccc;
 }
 
 .ghost-btn-light {
     padding: 7px 14px;
     background: transparent;
-    border: 1px solid #aaa;
-    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 13px;
-    color: #ddd;
+    font-size: 12px;
+    font-family: var(--font);
+    color: rgba(255,255,255,0.7);
+    transition: all 0.2s;
+    letter-spacing: 1px;
 }
 
 .ghost-btn-light:hover {
     background: rgba(255,255,255,0.1);
     color: white;
+    border-color: rgba(255,255,255,0.5);
+}
+
+/*  Tutorial button — stands out  */
+#tutorial-btn {
+    padding: 7px 16px;
+    background: var(--btn-tutorial);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: var(--font);
+    color: white;
+    letter-spacing: 1px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+#tutorial-btn:hover {
+    background: var(--btn-tutorial-hover);
+    transform: translateY(-1px);
 }
 
 /*  Top bar  */
@@ -152,16 +224,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 24px;
-    background: #333;
+    padding: 12px 28px;
+    background: var(--topbar);
     color: white;
     flex-wrap: nowrap;
     gap: 16px;
 }
 
 #welcome-msg {
-    font-size: 13px;
-    color: #ccc;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
 }
 
 #top-bar-right {
@@ -171,36 +244,38 @@ body {
 }
 
 #score-display {
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f5ede6;
+    letter-spacing: 1px;
 }
 
 #lives-display {
     font-size: 16px;
+    letter-spacing: 3px;
 }
 
 /*  Timer bar  */
 #timer-bar-wrap {
     width: 100%;
     height: 10px;
-    background: #ddd;
+    background: #e8e2d9;
 }
 
 #timer-bar-fill {
     height: 100%;
     width: 100%;
-    background: #4caf50;
+    background: var(--btn-primary);
     transition: width linear;
     transition-duration: 15s;
 }
 
 #timer-bar-fill.warning {
-    background: #ff9800;
+    background: var(--warning);
 }
 
 #timer-bar-fill.danger {
-    background: #f44336;
+    background: var(--danger);
 }
 
 /*  Game area  */
@@ -210,9 +285,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 28px;
     padding: 40px;
-    background: #f0f0f0;
+    background: var(--bg);
 }
 
 #syllable-wrap {
@@ -220,19 +295,20 @@ body {
 }
 
 #syllable-label {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 8px;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 #syllable-display {
     font-size: 80px;
-    font-weight: bold;
-    color: #222;
+    font-weight: 700;
+    color: var(--text);
     text-transform: uppercase;
     min-height: 90px;
+    letter-spacing: 6px;
 }
 
 /*  Timer  */
@@ -240,19 +316,21 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 3px solid #333;
+    border: 3px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
+    background: var(--surface);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: border-color 0.3s;
 }
 
 #timer-wrap.warning {
-    border-color: #ff9800;
+    border-color: var(--warning);
 }
 
 #timer-wrap.danger {
-    border-color: #f44336;
+    border-color: var(--danger);
     animation: shake 0.4s infinite alternate;
 }
 
@@ -262,59 +340,75 @@ body {
 }
 
 #timer-text {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text);
 }
 
 /*  Input  */
 #input-wrap {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
     max-width: 480px;
 }
 
 #word-input {
     flex: 1;
-    padding: 10px 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: var(--font);
     outline: none;
+    background: var(--surface);
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 #word-input:focus {
-    border-color: #666;
+    border-color: var(--btn-primary);
+    box-shadow: 0 0 0 3px rgba(92,122,107,0.15);
 }
 
 #word-input:disabled {
-    background: #eee;
+    background: #f0ece6;
     cursor: not-allowed;
 }
 
 /*  Game message  */
 #game-message {
-    font-size: 15px;
-    color: #444;
+    font-size: 14px;
+    color: var(--muted);
     min-height: 20px;
     text-align: center;
+    letter-spacing: 0.5px;
 }
 
 /*  Start button  */
 .start-btn {
-    padding: 14px 40px;
-    background: #333;
+    padding: 14px 44px;
+    background: var(--btn-primary);
     color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: var(--font);
+    font-weight: 600;
     cursor: pointer;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 2px 10px rgba(92,122,107,0.3);
 }
 
 .start-btn:hover {
-    background: #555;
+    background: var(--btn-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(92,122,107,0.35);
+}
+
+.start-btn:active {
+    transform: translateY(0);
 }
 
 /*  Leaderboard  */
@@ -323,55 +417,65 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #f0f0f0;
+    background: var(--bg);
     padding: 40px;
 }
 
 #leaderboard-card {
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 36px;
     width: 100%;
     max-width: 480px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
 
 #leaderboard-card h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #222;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text);
+    letter-spacing: 2px;
 }
 
 #leaderboard-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 #leaderboard-table th {
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
-    color: #888;
+    color: var(--muted);
     text-align: left;
     padding: 8px 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 1px;
 }
 
 #leaderboard-table td {
-    padding: 12px 10px;
-    font-size: 14px;
-    border-bottom: 1px solid #eee;
+    padding: 13px 10px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
 }
 
 #leaderboard-table tbody tr:first-child td {
-    font-weight: bold;
+    font-weight: 700;
+    color: var(--btn-primary);
+}
+
+#leaderboard-table tbody tr:hover td {
+    background: var(--bg);
 }
 
 /*  Tutorial modal  */
 #tutorial-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(44,40,36,0.5);
     z-index: 2000;
     display: flex;
     align-items: center;
@@ -380,50 +484,54 @@ body {
 }
 
 #tutorial-modal {
-    background: white;
-    border-radius: 6px;
-    padding: 30px;
+    background: var(--surface);
+    border-radius: 10px;
+    padding: 36px;
     max-width: 460px;
     width: 100%;
     position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
 }
 
 #tutorial-modal h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    color: #222;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text);
+    letter-spacing: 2px;
 }
 
 #tutorial-close {
     position: absolute;
-    top: 14px;
-    right: 14px;
+    top: 16px;
+    right: 16px;
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
-    color: #888;
+    color: var(--muted);
+    transition: color 0.2s;
 }
 
 #tutorial-close:hover {
-    color: #333;
+    color: var(--text);
 }
 
 .tutorial-steps {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    margin-bottom: 24px;
+    gap: 16px;
+    margin-bottom: 28px;
 }
 
 .tutorial-step {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 14px;
 }
 
 .step-num {
-    background: #333;
+    background: var(--btn-tutorial);
     color: white;
     border-radius: 50%;
     width: 28px;
@@ -431,19 +539,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: 700;
     flex-shrink: 0;
 }
 
 .tutorial-step p {
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.7;
     padding-top: 4px;
+    color: var(--text);
 }
 
 .tutorial-step strong {
-    color: #222;
+    color: var(--btn-primary);
 }
 
 #tutorial-modal .primary-btn {
@@ -455,16 +564,19 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #333;
-    color: white;
-    border-radius: 4px;
-    padding: 12px 18px;
+    background: var(--topbar);
+    color: #f5ede6;
+    border-radius: 8px;
+    padding: 14px 20px;
     font-size: 13px;
+    font-family: var(--font);
     z-index: 1000;
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s, transform 0.3s;
     pointer-events: none;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
 #achievement-popup.show {
