@@ -1,3 +1,5 @@
+# Link to the YouTube Video (https://youtu.be/wlB9X1EEZYs)
+
 # WordFuse
 
 A syllable word game built with Django.
