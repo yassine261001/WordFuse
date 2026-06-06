@@ -2,11 +2,11 @@
 
 This project was built with help from the following resources:
 
-- [Corey Schafer's Django Tutorial](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p) — project structure, views, models
-- [Django Official Documentation](https://docs.djangoproject.com/) — URL routing, ORM, authentication
-- [MDN Web Docs](https://developer.mozilla.org/) — JavaScript fetch() API and CSRF handling
-- [DictionaryAPI.dev](https://dictionaryapi.dev/) — free word validation API
-- Stack Overflow — various debugging and code snippets
+- [Corey Schafer's Django Tutorial](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p) - project structure, views, models
+- [Django Official Documentation](https://docs.djangoproject.com/) - URL routing, ORM, authentication
+- [MDN Web Docs](https://developer.mozilla.org/) - JavaScript fetch() API and CSRF handling
+- [DictionaryAPI.dev](https://dictionaryapi.dev/) - free word validation API
+- Stack Overflow - various debugging and code snippets
 
 # WordFuse
 
