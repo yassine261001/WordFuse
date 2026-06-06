@@ -47,6 +47,15 @@ python manage.py runserver
 ## Running tests
 pytest
 
+## Sample Data
+
+The database comes pre-loaded with sample data for testing.
+For re-seeding it at any time, run:
+
+python manage.py seed_sample_data
+python manage.py seed_achievements
+
+---
 
 
 
